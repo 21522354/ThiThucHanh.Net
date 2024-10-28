@@ -1,4 +1,6 @@
-﻿namespace ThiThucHanh.Net
+﻿using ThiThucHanh.Net.Areas.Admin.Controllers;
+
+namespace ThiThucHanh.Net
 {
     public class Program
     {
@@ -8,6 +10,7 @@
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddHttpClient();
 
             var app = builder.Build();
 

@@ -15,9 +15,9 @@ namespace ThiThucHanhAPI.Controllers
     {
         private readonly QuanLySanPhamContext _context;
 
-        public ProductsController(QuanLySanPhamContext context)
+        public ProductsController()
         {
-            _context = context;
+            _context = new QuanLySanPhamContext();
         }
 
         // GET: api/Products

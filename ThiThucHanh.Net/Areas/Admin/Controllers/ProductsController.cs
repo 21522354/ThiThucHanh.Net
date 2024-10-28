@@ -13,10 +13,12 @@ namespace ThiThucHanh.Net.Areas.Admin.Controllers
     public class ProductsController : Controller
     {
         private readonly QuanLySanPhamContext _context;
+        private readonly HttpClient _httpClient;
 
-        public ProductsController()
+        public ProductsController(HttpClient httpClient)
         {
             _context = new QuanLySanPhamContext();
+            _httpClient = httpClient;
         }
 
         // GET: Admin/Products
