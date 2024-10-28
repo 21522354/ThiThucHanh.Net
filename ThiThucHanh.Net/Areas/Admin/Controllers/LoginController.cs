@@ -29,6 +29,7 @@ namespace ThiThucHanh.Net.Areas.Admin.Controllers
             }
             var user = new User() { Username = username, Password = password };
             _quanLySanPhamContext.Users.Add(user);
+            _quanLySanPhamContext.SaveChanges();
             return RedirectToAction("Index", "Product", new { Area = "" });
         }
         public IActionResult ConfirmLogin(string username, string password)
