@@ -1,4 +1,4 @@
-namespace ThiThucHanh.Net
+﻿namespace ThiThucHanh.Net
 {
     public class Program
     {
@@ -26,17 +26,24 @@ namespace ThiThucHanh.Net
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
             app.UseEndpoints(endpoints =>
             {
+                // Cấu hình route cho các area
                 endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                // Đặt mặc định area là Admin, controller là Login, action là Index
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Login}/{action=Index}/{id?}",
+                    defaults: new { area = "Admin" }
                 );
             });
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Login}/{action=Index}/{id?}");
 
             app.Run();
         }
