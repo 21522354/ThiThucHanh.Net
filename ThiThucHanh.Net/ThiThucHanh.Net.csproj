@@ -25,4 +25,12 @@
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\admin\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThiThucHanhAPI\ThiThucHanhAPI.csproj" />
+  </ItemGroup>
+
 </Project>
